@@ -26,9 +26,42 @@ To write a Python function that takes a long string and a specified width, and r
 
 
 ## 🧪 Program
-Add Code Here
+```
+def format_string(input_string, width):
+
+    words = input_string.split()
+    lines = []
+    current_line = ""
+    for word in words:
+        if len(current_line) + len(word) + 1 > width:
+            lines.append(current_line)
+            current_line = word
+        else:
+  
+            if current_line:
+                current_line += " " + word
+            else:
+                current_line = word
+    if current_line:
+        lines.append(current_line)
+   
+    return "\n".join(lines)
+
+input_string = "This is an example of a long string that will be formatted into multiple lines based on the specified width."
+width = 20
+formatted_string = format_string(input_string, width)
+print(formatted_string)
+```
 
 ## Sample Output
-
+```
+This is an example
+of a long string
+that will be
+formatted into
+multiple lines based
+on the specified
+width.
+```
 ## Result
-
+Thus, the program is executed successfully.
